@@ -1,10 +1,10 @@
 :root {
-  --background: #f4f1e9; /* Soft beige background */
+  --background: #f4f1e9; 
   --text: #333333;
-  --title-color: #555555; /* Dark gray text */
-  --box-color: #e7dfd5; /* Warm gray for boxes */
+  --title-color: #555555; 
+  --box-color: #e7dfd5; 
 
-  --secondary-color: #e44d26; /* Vibrant red for secondary elements */
+  --secondary-color: #e44d26; 
 }
 
 body {
@@ -82,7 +82,7 @@ h1 {
   margin-top: 10px;
   color: var(--secondary-color);
 }
-/* Add this to your styles.css */
+
 
 .modal {
   display: flex;
@@ -93,8 +93,26 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.7); 
   z-index: 1;
+}
+.character-list {
+  text-decoration: none; 
+}
+
+.item:hover .character-list {
+  text-decoration: underline; 
+}
+
+.character-list:hover::after {
+  content: 'Click to see more';
+  display: inline-block;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
 }
 
 .character-images-container {
@@ -120,6 +138,6 @@ h1 {
 }
 .character-list:hover {
   cursor: pointer;
-  text-decoration: underline; /* Optional: Underline effect */
+  text-decoration: underline; 
 }
 

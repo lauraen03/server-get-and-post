@@ -88,7 +88,7 @@ const itemSchema = Joi.object({
   
 });
 
-// Serve static files from the 'public' directory
+
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
