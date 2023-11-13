@@ -37,7 +37,7 @@ function displayData(data) {
 
     appDiv.appendChild(itemDiv);
 
-   
+    // Add event listener to character list within the itemDiv
     const characterList = itemDiv.querySelector('.character-list');
     characterList.addEventListener('click', () => showCharacterImages(item.title, item.characters));
   });
@@ -104,14 +104,14 @@ function getCharacterImageUrl(game, character) {
       'Ciri': 'ciri.jpg',
      
     },
-   
+    // Add more games as needed
   };
 
   const imageUrl = characterImages[game]?.[character];
 
   if (!imageUrl) {
     console.error(`Image not found for ${character} in ${game}`);
-    return 'default.jpg'; 
+    return 'default.jpg'; // Default image if character image is not found
   }
 
   return imageUrl;
@@ -122,7 +122,7 @@ function getCharacterImageUrl(game, character) {
 function toggleForm() {
   const form = document.getElementById('addItemForm');
 
- 
+  // Toggle the form's visibility
   form.style.display = form.style.display === 'none' ? 'block' : 'none';
 }
 
@@ -141,7 +141,7 @@ async function addItem() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        id: Date.now(), 
+        id: Date.now(), // Using timestamp as a simple unique ID
         title,
         genre,
         releaseYear,
@@ -153,10 +153,10 @@ async function addItem() {
 
     const result = await response.text();
 
-  
+    // Display success or error message
     displayMessage(result);
     
-   
+    // Refresh the data after adding an item
     fetchData();
   } catch (error) {
     console.error('Error adding item:', error);
@@ -167,7 +167,7 @@ function displayMessage(message) {
   const messageDiv = document.getElementById('message');
   messageDiv.textContent = message;
 
- 
+  // Show the message for 3 seconds
   setTimeout(() => {
     messageDiv.textContent = '';
   }, 3000);
