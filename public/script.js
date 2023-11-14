@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchData() {
   try {
-    const response = await fetch('http://localhost:3000/api/data');
+    const response = await fetch('/api/data');
     const data = await response.json();
     displayData(data);
   } catch (error) {
@@ -135,7 +135,7 @@ async function addItem() {
   const imageUrl = document.getElementById('imageUrl').value;
 
   try {
-    const response = await fetch('http://localhost:3000/api/add-item', {
+    const response = await fetch('/api/add-item', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
